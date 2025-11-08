@@ -1,0 +1,38 @@
+# Inventory System – Week 9
+
+This project builds on the previous week's assignment and implements an **industrial inventory management system** using **C#**, **Avalonia UI**, and a **SQLite database**.  
+The application reads queued orders from a local database (`inventory.sqlite`) and prints them to the console or displays them in a GUI.
+
+---
+
+## 📋 Requirements
+
+✅ Use a database (`inventory.sqlite`) instead of static C# data.  
+✅ Create the database with example inventory data from last week.  
+✅ Replace the dictionary-based stock structure with a list (`List<Item>`) that includes a quantity property.  
+✅ Modify the class diagram accordingly.  
+✅ Demonstrate the system with queued orders being loaded and displayed.
+
+---
+
+
+## 🗄️ Database Structure (`inventory.sqlite`)
+
+The database contains:
+- `Items` table – stores all items in stock  
+- `Orders` table – stores customer orders  
+- `OrderLines` table – connects items to orders (many-to-one relationship)
+
+---
+
+## 🧠 Application Overview
+
+- **DatabaseSetup.cs** – creates and initializes the SQLite database  
+- **ReadData.cs / ReadOrders.cs** – reads orders and items from the database  
+- **MainViewModel.cs** – contains logic for processing and displaying orders  
+- **MainWindow.axaml** – defines the graphical user interface (GUI)  
+- **Order.cs** – defines order, order line, and item models  
+- **Program.cs** – application entry point  
+
+When run, the application loads queued orders from `inventory.sqlite` and displays them like this:
+
