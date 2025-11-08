@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="InventorySystem.MainWindow"
+        Title="Inventory Orders" Width="600" Height="500">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Queued Orders" FontSize="18" FontWeight="Bold"/>
+        <DataGrid Items="{Binding QueuedOrders}" AutoGenerateColumns="True" Height="150" Margin="0,5,0,15"/>
+
+        <TextBlock Text="Processed Orders" FontSize="18" FontWeight="Bold"/>
+        <DataGrid Items="{Binding ProcessedOrders}" AutoGenerateColumns="True" Height="150" Margin="0,5,0,15"/>
+
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button Content="Process" Command="{Binding ProcessNextOrderCommand}"/>
+            <Button Content="Connect" Command="{Binding ConnectCommand}"/>
+            <TextBox Text="{Binding IpAddress}" Width="150"/>
+        </StackPanel>
+
+        <TextBlock Text="Status Messages" FontSize="16" FontWeight="Bold" Margin="0,15,0,5"/>
+        <TextBlock Text="{Binding StatusMessage}"/>
+    </StackPanel>
+</Window>
